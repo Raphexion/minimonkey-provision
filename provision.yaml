@@ -1,0 +1,35 @@
+users:
+  nijo:
+    name: "Niklas Johansson"
+    token: "ntoken"
+  asli:
+    name: "Astrid Lindgren"
+    token: "mtoken"
+
+devices:
+  device1:
+    token: "t1"
+  device2:
+    token: "t2"
+  device3:
+    token: "t3"
+
+rooms:
+  device1-data:
+    publishers:
+      - device1
+    subscribers:
+        - nijo
+
+  device2-data:
+    publishers:
+      - device2
+    subscribers:
+      - asli
+
+  device3-data:
+    publishers:
+      - device3
+    subscribers:
+      - nijo
+      - asli
