@@ -38,13 +38,20 @@ def main(host, token, config):
         mm.enter(name)
         paus(mm)
 
-        for publisher in info['publishers']:
-            mm.add_publish(tokens[publisher])
-            paus(mm)
+        if 'publishers' in info:
+            for publisher in info['publishers']:
+                mm.add_publish(tokens[publisher])
+                paus(mm)
 
-        for subscriber in info['subscribers']:
-            mm.add_subscribe(tokens[subscriber])
-            paus(mm)
+        if 'subscribers' in info:
+            for subscriber in info['subscribers']:
+                mm.add_subscribe(tokens[subscriber])
+                paus(mm)
+
+        if 'links' in info:
+            for link in info['links']:
+                mm.link_room(link)
+                paus(mm)
 
     time.sleep(2)
 

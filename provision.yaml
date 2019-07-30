@@ -15,17 +15,31 @@ devices:
     token: "t3"
 
 rooms:
+  factory1:
+    subscribers:
+      - nijo
+      - asli
+
+  factory2:
+    subscribers:
+      - nijo
+      - asli
+
   device1-data:
     publishers:
       - device1
     subscribers:
-        - nijo
+      - nijo
+    links:
+      - factory1
 
   device2-data:
     publishers:
       - device2
     subscribers:
       - asli
+    links:
+      - factory1
 
   device3-data:
     publishers:
@@ -33,3 +47,5 @@ rooms:
     subscribers:
       - nijo
       - asli
+    links:
+      - factory2
